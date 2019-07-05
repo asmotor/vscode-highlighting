@@ -1,0 +1,61 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ASMotor",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#keywords-control" },
+		{ "include": "#keywords-operators" },
+		{ "include": "#keywords-other" },
+		{ "include": "#storage-type" },
+		{ "include": "#support-class" },
+		{ "include": "#support-function" },
+		{ "include": "#support-type" },
+		{ "include": "#strings" }
+	],
+	"repository": {
+		"comments": {
+			"name": "comment.line.asm",
+			"match": "(;.*)$"
+		},
+		"keywords-control": {
+			"name": "keyword.control.asm",
+			"match": "\\b(?i:ELSE|END|ENDC|ENDM|ENDR|IF|IFC|IFD|IFEQ|IFGE|IFGT|IFLE|IFLT|IFNC|IFND|IFNE|MEXIT|REPT|REXIT)\\b"
+		},
+		"keywords-operators": {
+			"name": "keyword.operator.asm",
+			"match": "(\\|\\||&&|==|>|<|>=|<=|~=|~!|\\||!|\\^|&|<<|>>|\\+|-|\\*|/|~/|~|//|\\*\\*)"
+		},
+		"keywords-other": {
+			"name": "keyword.other.asm",
+			"match": "\\b(?i:CNOP|EVEN|INCBIN|INCLUDE|OPT|ORG|POPO|POPS|PURGE|PUSHO|PUSHS|RSRESET|RSSET|SECTION|SHIFT|FAIL|WARN|PRINTF|PRINTT|PRINTV)\\b"
+		},
+		"storage-type": {
+			"name": "storage.type.asm",
+			"match": "\\b(?i:MACRO|EQU|EQUS|SET|EXPORT|GLOBAL|IMPORT|XDEF|XREF)\\b"
+		},
+		"support-class": {
+			"name": "support.class.asm",
+			"match": "\\b(?i:TEXT|RAM)\\b"
+		},
+		"support-function": {
+			"name": "support.function.asm",
+			"match": "\\b(?i:ACOS|ASIN|ATAN|ATAN2|COMPARETO|COS|DEF|HIGHLIMIT|INDEXOF|LENGTH|LOWER|LOWLIMIT|SIN|SLICE|TAN|UPPER)\\b"
+		},
+		"support-type": {
+			"name": "support.type.asm",
+			"match": "\\b(?i:CODE|DATA|BSS|HOME|GROUP)\\b"
+		},
+		"strings": {
+			"name": "string.quoted.double.asm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.asm",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.asm"
+}
