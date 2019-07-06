@@ -25,6 +25,11 @@
             "aliases": ["ASMotor.6502", "asm"],
             "extensions": [".asm",".6502",".inc"],
             "configuration": "./language-configuration.json"
+        },{
+            "id": "asm.dcpu",
+            "aliases": ["ASMotor.DCPU", "asm"],
+            "extensions": [".asm",".dcpu",".inc"],
+            "configuration": "./language-configuration.json"
         }],
         "grammars": [{
             "language": "asm.680x0",
@@ -39,7 +44,11 @@
             "scopeName": "source.asm.6502",
             "path": "./syntaxes/asm.6502.tmLanguage.json"
         },{
-            "injectTo": ["source.asm.680x0", "source.asm.z80", "source.asm.6502"],
+            "language": "asm.dcpu",
+            "scopeName": "source.asm.dcpu",
+            "path": "./syntaxes/asm.dcpu.tmLanguage.json"
+        },{
+            "injectTo": ["source.asm.680x0", "source.asm.z80", "source.asm.6502", "source.asm.dcpu"],
             "scopeName": "source.asm",
             "path": "./syntaxes/asm.tmLanguage.json"
         }]

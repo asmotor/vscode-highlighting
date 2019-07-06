@@ -1,0 +1,24 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ASMotor.DCPU",
+	"scopeName": "source.asm.dcpu",
+	"patterns": [
+		{ "include": "#mnemonics" },
+		{ "include": "#addressing-modes" },
+		{ "include": "#storage-type" }
+	],
+	"repository": {
+		"mnemonics": {
+			"match": "\\b(?i:ADD|AND|BOR|DIV|IFB|IFE|IFG|IFN|JSR|MOD|MUL|SET|SHL|SHR|SUB|XOR)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
+		"addressing-modes": {
+			"match": "\\b(?i:A|B|C|X|Y|Z|I|J|POP|\\[SP\\+\\+\\]|PEEK|\\[SP\\]|PUSH|\\[\\-\\-SP\\]|SP|PC|O)\\b",
+			"name": "support.variable.asm"
+		},
+		"storage-type": {
+			"name": "storage.type.asm",
+			"match": "\\b(?i:DSW|DW|DL|RW|RL)\\b"
+		}
+	}
+}
