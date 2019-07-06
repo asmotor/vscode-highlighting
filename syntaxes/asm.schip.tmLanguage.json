@@ -1,0 +1,24 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ASMotor.SCHIP",
+	"scopeName": "source.asm.schip",
+	"patterns": [
+		{ "include": "#mnemonics" },
+		{ "include": "#addressing-modes" },
+		{ "include": "#storage-type" }
+	],
+	"repository": {
+		"mnemonics": {
+			"match": "\\b(?i:BCD|LDF|LDF10|SHL|SKNP|SKP|SHR|WKP|AND|OR|SUB|SUBN|XOR|DRW|LD|LDM|ADD|SE|SNE|RND|SCD|JP|CALL|CLS|EXIT|LOW|HIGH|RET|SCR|SCL)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
+		"addressing-modes": {
+			"match": "\\b(?i:V0|V1|V2|V3|V4|V5|V6|V7|V8|V9|V10|V11|V12|V13|V14|V15|VA|VB|VC|VD|VE|VF|DT|ST|I|\\(I\\)|RPL)\\b",
+			"name": "support.variable.asm"
+		},
+		"storage-type": {
+			"name": "storage.type.asm",
+			"match": "\\b(?i:DSB|DSW|DB|DW|RB|RW)\\b"
+		}
+	}
+}
