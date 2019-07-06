@@ -1,6 +1,6 @@
 {
 	"scopeName": "source.asm",
-	"injectionSelector": "R:source.asm.z80",
+	"injectionSelector": "R:source.asm",
 	"patterns": [
 		{ "include": "#comments" },
 		{ "include": "#strings" },

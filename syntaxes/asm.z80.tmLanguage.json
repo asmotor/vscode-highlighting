@@ -4,7 +4,7 @@
 	"scopeName": "source.asm.z80",
 	"patterns": [
 		{ "include": "#mnemonics" },
-		{ "include": "#adressing-modes" },
+		{ "include": "#addressing-modes" },
 		{ "include": "#storage-type" }
 	],
 	"repository": {
@@ -12,8 +12,8 @@
 			"match": "\\b(?i:ADC|ADD|AND|BIT|CALL|CCF|CPL|CP|CPD|CPDR|CPI|CPIR|DAA|DEC|DI|DJNZ|EI|EX|EXX|HALT|IM|IN|INC|IND|INDR|INI|INIR|JP|JR|LD|LDD|LDDR|LDI|LDIR|LDH|LDIO|LDHL|NEG|NOP|OR|OTDR|OTIR|OUT|OUTD|OUTI|POP|PUSH|RES|RET|RETI|RETN|RL|RLA|RLC|RLD|RLCA|RR|RRA|RRC|RRD|RRCA|RST|SBC|SCF|SLA|SLL|SRA|SRL|STOP|SUB|SWAP|XOR)\\b",
 			"name": "keyword.other.asm.mnemonic"
 		},
-		"adressing-modes": {
-			"match": "\\b(?i:NZ|Z|NC|PO|PE|P|M|\\[HL\\]|\\(HL\\)|\\[HL\\+\\]|\\(HL\\+\\)|\\[HL\\-\\]|\\(HL\\-\\)|HL|AF|AF'|\\[BC\\]|\\(BC\\)|BC|\\[DE\\]|\\(DE\\)|DE|\\[SP\\]|\\(SP\\)|SP|IX|IY|A|B|\\[C\\]|\\(C\\)|\\[$FF00+C\\]|\\($FF00+C\\)|C|D|E|H|L|IXH|IXL|IYH|IYL|I|R)\\b",
+		"addressing-modes": {
+			"match": "\\b(?i:NZ|Z|NC|PO|PE|P|M|\\[HL\\]|\\(HL\\)|\\[HL\\+\\]|\\(HL\\+\\)|\\[HL\\-\\]|\\(HL\\-\\)|HL|AF|AF\\'|\\[BC\\]|\\(BC\\)|BC|\\[DE\\]|\\(DE\\)|DE|\\[SP\\]|\\(SP\\)|SP|IX|IY|A|B|\\[C\\]|\\(C\\)|\\[$FF00+C\\]|\\($FF00+C\\)|C|D|E|H|L|IXH|IXL|IYH|IYL|I|R)\\b",
 			"name": "support.variable.asm"
 		},
 		"storage-type": {

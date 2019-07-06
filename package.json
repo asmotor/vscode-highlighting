@@ -2,7 +2,7 @@
     "name": "asmotor-syntax",
     "displayName": "ASMotor",
     "description": "Syntax highlighting for the ASMotor assembly language",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "engines": {
         "vscode": "^1.36.0"
     },
@@ -11,17 +11,26 @@
     ],
     "contributes": {
         "languages": [{
+            "id": "asm.680x0",
+            "aliases": ["ASMotor.680x0", "asm"],
+            "extensions": [".asm",".68k",".inc"],
+            "configuration": "./language-configuration.json"
+        },{
             "id": "asm.z80",
             "aliases": ["ASMotor.Z80", "asm"],
             "extensions": [".asm",".z80",".inc"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
+            "language": "asm.680x0",
+            "scopeName": "source.asm.680x0",
+            "path": "./syntaxes/asm.680x0.tmLanguage.json"
+        },{
             "language": "asm.z80",
             "scopeName": "source.asm.z80",
             "path": "./syntaxes/asm.z80.tmLanguage.json"
         },{
-            "injectTo": ["source.asm.z80"],
+            "injectTo": ["source.asm.680x0", "source.asm.z80"],
             "scopeName": "source.asm",
             "path": "./syntaxes/asm.tmLanguage.json"
         }]
