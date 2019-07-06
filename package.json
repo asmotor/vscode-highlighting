@@ -11,13 +11,17 @@
     ],
     "contributes": {
         "languages": [{
-            "id": "asm",
-            "aliases": ["ASMotor", "asm"],
-            "extensions": [".asm",".z80",".68k"],
+            "id": "asm.z80",
+            "aliases": ["ASMotor.Z80", "asm"],
+            "extensions": [".asm",".z80",".inc"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "asm",
+            "language": "asm.z80",
+            "scopeName": "source.asm.z80",
+            "path": "./syntaxes/asm.z80.tmLanguage.json"
+        },{
+            "injectTo": ["source.asm.z80"],
             "scopeName": "source.asm",
             "path": "./syntaxes/asm.tmLanguage.json"
         }]

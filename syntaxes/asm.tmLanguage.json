@@ -1,21 +1,56 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "ASMotor",
+	"scopeName": "source.asm",
+	"injectionSelector": "R:source.asm.z80",
 	"patterns": [
 		{ "include": "#comments" },
+		{ "include": "#strings" },
+		{ "include": "#named-label" },
+		{ "include": "#numeric-label" },
+		{ "include": "#identifier" },
+		{ "include": "#constant-numeric-binary" },
+		{ "include": "#constant-numeric-gameboy" },
+		{ "include": "#constant-numeric-decimal" },
+		{ "include": "#constant-numeric-hex" },
 		{ "include": "#keywords-control" },
 		{ "include": "#keywords-operators" },
 		{ "include": "#keywords-other" },
 		{ "include": "#storage-type" },
 		{ "include": "#support-class" },
 		{ "include": "#support-function" },
-		{ "include": "#support-type" },
-		{ "include": "#strings" }
+		{ "include": "#support-type" }
 	],
 	"repository": {
+		"strings": {
+			"name": "string.quoted.double.asm",
+			"match": "\\\"(\\.|[^\\\"])*\\\""
+		},
 		"comments": {
 			"name": "comment.line.asm",
 			"match": "(;.*)$"
+		},
+		"named-label": {
+			"name": "entity.name.function.asm",
+			"match": "^(\\.?[A-Za-z_][A-Za-z0-9_]*)"
+		},
+		"numeric-label": {
+			"name": "entity.name.function.asm",
+			"match": "^(([0-9]+)\\$)"
+		},
+		"constant-numeric-binary": {
+			"name": "constant.numeric.asm",
+			"match": "(\\%[01]+)"
+		},
+		"constant-numeric-hex": {
+			"name": "constant.numeric.asm",
+			"match": "(\\$[0-9a-fA-F]+)"
+		},
+		"constant-numeric-gameboy": {
+			"name": "constant.numeric.asm",
+			"match": "(\\`[0-3]+)"
+		},
+		"constant-numeric-decimal": {
+			"name": "constant.numeric.asm",
+			"match": "([0-9]+)"
 		},
 		"keywords-control": {
 			"name": "keyword.control.asm",
@@ -31,7 +66,7 @@
 		},
 		"storage-type": {
 			"name": "storage.type.asm",
-			"match": "\\b(?i:MACRO|EQU|EQUS|SET|EXPORT|GLOBAL|IMPORT|XDEF|XREF)\\b"
+			"match": "\\b(?i:MACRO|EQU|EQUS|SET|EXPORT|GLOBAL|IMPORT|XDEF|XREF|__DSB|__DSW|__DSL|__DCB|__DCW|__DCL|__RB|__RW|__RL)\\b"
 		},
 		"support-class": {
 			"name": "support.class.asm",
@@ -45,17 +80,9 @@
 			"name": "support.type.asm",
 			"match": "\\b(?i:CODE|DATA|BSS|HOME|GROUP)\\b"
 		},
-		"strings": {
-			"name": "string.quoted.double.asm",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.asm",
-					"match": "\\\\."
-				}
-			]
+		"identifier": {
+			"name": "variable.other",
+			"match": "(\\.?[A-Za-z_][A-Za-z0-9_]*)"
 		}
-	},
-	"scopeName": "source.asm"
+	}
 }
