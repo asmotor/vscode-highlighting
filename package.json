@@ -30,6 +30,11 @@
             "aliases": ["ASMotor.DCPU", "asm"],
             "extensions": [".asm",".dcpu",".inc"],
             "configuration": "./language-configuration.json"
+        },{
+            "id": "asm.mips",
+            "aliases": ["ASMotor.MIPS", "asm"],
+            "extensions": [".asm",".mips",".inc"],
+            "configuration": "./language-configuration.json"
         }],
         "grammars": [{
             "language": "asm.680x0",
@@ -48,7 +53,11 @@
             "scopeName": "source.asm.dcpu",
             "path": "./syntaxes/asm.dcpu.tmLanguage.json"
         },{
-            "injectTo": ["source.asm.680x0", "source.asm.z80", "source.asm.6502", "source.asm.dcpu"],
+            "language": "asm.mips",
+            "scopeName": "source.asm.mips",
+            "path": "./syntaxes/asm.mips.tmLanguage.json"
+        },{
+            "injectTo": ["source.asm.680x0", "source.asm.z80", "source.asm.6502", "source.asm.dcpu", "source.asm.mips"],
             "scopeName": "source.asm",
             "path": "./syntaxes/asm.tmLanguage.json"
         }]
