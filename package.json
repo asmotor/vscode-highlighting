@@ -20,6 +20,11 @@
             "aliases": ["ASMotor.Z80", "asm"],
             "extensions": [".asm",".z80",".inc"],
             "configuration": "./language-configuration.json"
+        },{
+            "id": "asm.6502",
+            "aliases": ["ASMotor.6502", "asm"],
+            "extensions": [".asm",".6502",".inc"],
+            "configuration": "./language-configuration.json"
         }],
         "grammars": [{
             "language": "asm.680x0",
@@ -30,7 +35,11 @@
             "scopeName": "source.asm.z80",
             "path": "./syntaxes/asm.z80.tmLanguage.json"
         },{
-            "injectTo": ["source.asm.680x0", "source.asm.z80"],
+            "language": "asm.6502",
+            "scopeName": "source.asm.6502",
+            "path": "./syntaxes/asm.6502.tmLanguage.json"
+        },{
+            "injectTo": ["source.asm.680x0", "source.asm.z80", "source.asm.6502"],
             "scopeName": "source.asm",
             "path": "./syntaxes/asm.tmLanguage.json"
         }]

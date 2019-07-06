@@ -1,0 +1,39 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ASMotor.6502",
+	"scopeName": "source.asm.6502",
+	"patterns": [
+		{ "include": "#mnemonics" },
+		{ "include": "#mnemonics-undoc0" },
+		{ "include": "#mnemonics-undoc1" },
+		{ "include": "#mnemonics-undoc2" },
+		{ "include": "#addressing-modes" },
+		{ "include": "#storage-type" }
+	],
+	"repository": {
+		"mnemonics": {
+			"match": "\\b(?i:ADC|AND|ASL|BIT|BPL|BMI|BVC|BVS|BCC|BCS|BNE|BEQ|BRK|CMP|CPX|CPY|DEC|EOR|CLC|SEC|CLI|SEI|CLV|CLD|SED|INC|JMP|JSR|LDA|LDX|LDY|LSR|NOP|ORA|TAX|TXA|DEX|INX|TAY|TYA|DEY|INY|ROL|ROR|RTI|RTS|SBC|STA|TXS|TSX|PHA|PLA|PHP|PLP|STX|STY)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
+		"mnemonics-undoc0": {
+			"match": "\\b(?i:AAC|AAX|ARR|ASR|ATX|AXA|AXS|DCP|DOP|ISC|KIL|LAR|LAX|RLA|RRA|SLO|SRE|SXA|SYA|TOP|XAA|XAS)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
+		"mnemonics-undoc1": {
+			"match": "\\b(?i:ANC|SAX|ARR|ASR|LXA|SHA|SBX|DCP|DOP|ISB|JAM|LAE|LAX|RLA|RRA|SLO|SRE|SHX|SHY|TOP|ANE|SHS)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
+		"mnemonics-undoc2": {
+			"match": "\\b(?i:ANC|AXS|ARR|ALR|OAL|AXA|SAX|DCM|SKB|INS|HLT|LAS|LAX|RLA|RRA|ASO|LSE|XAS|SAY|SKW|XAA|TAS)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
+		"addressing-modes": {
+			"match": "\\b(?i:A|X|Y)\\b",
+			"name": "support.variable.asm"
+		},
+		"storage-type": {
+			"name": "storage.type.asm",
+			"match": "\\b(?i:DS|DB|DW|RB|RW)\\b"
+		}
+	}
+}
