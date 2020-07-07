@@ -8,7 +8,7 @@
         "url": "https://github.com/asmotor/vscode-highlighting.git"
     },
     "homepage": "https://github.com/asmotor/vscode-highlighting/blob/master/README.md",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "engines": {
         "vscode": "^1.36.0"
     },
@@ -25,6 +25,11 @@
             "id": "asm.z80",
             "aliases": ["ASMotor.Z80", "asm"],
             "extensions": [".asm",".z80",".inc"],
+            "configuration": "./language-configuration.json"
+        },{
+            "id": "asm.rc8",
+            "aliases": ["ASMotor.RC8", "asm"],
+            "extensions": [".asm",".rc8",".inc"],
             "configuration": "./language-configuration.json"
         },{
             "id": "asm.6502",
@@ -56,6 +61,10 @@
             "scopeName": "source.asm.z80",
             "path": "./syntaxes/asm.z80.tmLanguage.json"
         },{
+            "language": "asm.rc8",
+            "scopeName": "source.asm.rc8",
+            "path": "./syntaxes/asm.rc8.tmLanguage.json"
+        },{
             "language": "asm.6502",
             "scopeName": "source.asm.6502",
             "path": "./syntaxes/asm.6502.tmLanguage.json"
@@ -72,7 +81,7 @@
             "scopeName": "source.asm.schip",
             "path": "./syntaxes/asm.schip.tmLanguage.json"
         },{
-            "injectTo": ["source.asm.680x0", "source.asm.z80", "source.asm.6502", "source.asm.dcpu", "source.asm.mips", "source.asm.schip"],
+            "injectTo": ["source.asm.680x0", "source.asm.z80", "source.asm.rc8", "source.asm.6502", "source.asm.dcpu", "source.asm.mips", "source.asm.schip"],
             "scopeName": "source.asm",
             "path": "./syntaxes/asm.tmLanguage.json"
         }]

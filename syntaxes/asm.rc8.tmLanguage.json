@@ -1,0 +1,27 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ASMotor.RC8",
+	"scopeName": "source.asm.rc8",
+	"patterns": [
+		{ "include": "#mnemonics" },
+		{ "include": "#addressing-modes" },
+		{ "include": "#storage-type" }
+	],
+	"repository": {
+		"mnemonics": {
+			"match": "\\b(?i:ADD|AND|CMP|DEC|DI|DJ|EI|EXT|INC|J|JAL|LCO|LCR|LD|LIO|LS|NEG|NOP|NOT|OR|POP|POPA|PUSH|PUSHA|RETI|RS|RSA|SUB|SWAP|SYS|TST|XOR)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
+		"addressing-modes": {
+			"match": "\\b(?i:LE|GT|LT|GE|LEU|GTU|LTU|GEU|EQ|NE|F|T|B|C|D|E|H|L|FT|BC|DE|HL|\\(C\\)|\\(FT\\)|\\(BC\\)|\\(DE\\)|\\(HL\\)|\\(BC+F\\)|\\(BC+T\\)|\\(BC+D\\)|\\(BC+E\\)|\\(BC+H\\)|\\(BC+L\\))\\b",
+			"name": "support.variable.asm"
+		},
+		"storage-type": {
+			"name": "storage.type.asm",
+			"match": "\\b(?i:DS|DB|DW|RB|RW)\\b"
+		}
+	}
+}
+
+
+
