@@ -23,3 +23,7 @@ Initial release of asmotor-syntax
 ### 1.1.0
 
 Added support for RC800.
+
+### 1.1.1
+
+RC800 support updated.
