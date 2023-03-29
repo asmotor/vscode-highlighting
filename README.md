@@ -8,26 +8,4 @@ output formats, such as Amiga hunk, Game Boy, Commodore PRG, Sega Master System 
 
 ASMotor must be installed separately. It can be found at https://github.com/asmotor/asmotor
 
-
-
-## Features
-
 <img src="https://raw.githubusercontent.com/asmotor/vscode-highlighting/master/images/z80-example.png" width="400px" />
-
-## Release Notes
-
-### 1.0.0
-
-Initial release of asmotor-syntax
-
-### 1.1.0
-
-Added support for RC800.
-
-### 1.1.1
-
-RC800 support updated.
-
-### 1.2.0
-
-Added support for Motorola 6809.
