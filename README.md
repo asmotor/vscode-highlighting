@@ -27,3 +27,7 @@ Added support for RC800.
 ### 1.1.1
 
 RC800 support updated.
+
+### 1.2.0
+
+Added support for Motorola 6809.

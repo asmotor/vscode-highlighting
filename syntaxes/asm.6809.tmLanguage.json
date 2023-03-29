@@ -1,0 +1,24 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ASMotor.6809",
+	"scopeName": "source.asm.6809",
+	"patterns": [
+		{ "include": "#mnemonics" },
+		{ "include": "#addressing-modes" },
+		{ "include": "#storage-type" }
+	],
+	"repository": {
+		"mnemonics": {
+			"match": "\\b(?i:ABX|ADCA|ADCB|ADDA|ADDB|ADDD|ANDA|ANDB|ANDCC|ASL|LSL|ASLA|LSLA|ASLB|LSLB|ASR|ASRA|ASRB|NOP|BRA|BRN|BHI|BLS|BCC|BHS|BCS|BLO|BNE|BEQ|BVC|BVS|BPL|BMI|BGE|BLT|BGT|BLE|BSR|LBRA|LBRN|LBHI|LBLS|LBCC|LBHS|LBCS|LBLO|LBNE|LBEQ|LBVC|LBVS|LBPL|LBMI|LBGE|LBLT|LBGT|LBLE|LBSR|BITA|BITB|CLR|CLRA|CLRB|CMPA|CMPB|CMPD|CMPX|CMPY|CMPU|CMPS|COM|COMA|COMB|CWAI|DAA|DEC|DECA|DECB|EORA|EORB|EXG|INC|INCA|INCB|JMP|JSR|LDA|LDB|LDD|LDX|LDY|LDU|LDS|LEAX|LEAY|LEAU|LEAS|LSR|MUL|NEG|NEGA|NEGB|ORA|ORB|ORCC|PSHS|PSHU|PULS|PULU|ROL|ROLA|ROLB|ROR|RORA|RORB|RTI|RTS|SBCA|SBCB|SEX|STA|STB|STD|STX|STY|STU|STS|SUBA|SUBB|SUBD|SWI|SWI2|SWI3|SYNC|TFR|TST|TSTA|TSTB)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
+		"addressing-modes": {
+			"match": "\\b(?i:A|B|D|PCR|CCR|DPR|X|Y|U|S)\\b",
+			"name": "support.variable.asm"
+		},
+		"storage-type": {
+			"name": "storage.type.asm",
+			"match": "\\b(?i:DS|DB|DW|RB|RW)\\b"
+		}
+	}
+}

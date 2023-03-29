@@ -9,11 +9,11 @@
 	],
 	"repository": {
 		"mnemonics": {
-			"match": "\\b(?i:ADD|AND|CMP|DI|DJ|EI|EXG|EXT|J|JAL|LCO|LCR|LD|LIO|LS|NEG|NOP|NOT|OR|POP|POPA|PUSH|PUSHA|RETI|RS|RSA|SUB|SYS|TST|XOR)\\b",
+			"match": "\\b(?i:ADD|AND|CMP|DI|DJ|EI|EXG|EXT|J|JAL|LCO|LCR|LD|LIO|LS|NEG|NOP|NOT|OR|PICK|POP|POPA|PUSH|PUSHA|RETI|RS|RSA|SUB|SWAP|SWAPA|SYS|TST|XOR)\\b",
 			"name": "keyword.other.asm.mnemonic"
 		},
 		"addressing-modes": {
-			"match": "\\b(?i:LE|GT|LT|GE|LEU|GTU|LTU|GEU|EQ|NE|F|T|B|C|D|E|H|L|FT|BC|DE|HL|\\(C\\)|\\(FT\\)|\\(BC\\)|\\(DE\\)|\\(HL\\))\\b",
+			"match": "\\b(?i:F|T|B|C|D|E|H|L|FT|BC|DE|HL|\\(C\\)|\\(FT\\)|\\(BC\\)|\\(DE\\)|\\(HL\\)|\\(FT+\\)|\\(BC+\\)|\\(DE+\\)|\\(HL+\\)|\\(-FT\\)|\\(-BC\\)|\\(-DE\\)|\\(-HL\\)|EQ|NE|LE|GT|LT|GE|LEU|GTU|LTU|GEU|Z|NZ|NC)\\b",
 			"name": "support.variable.asm"
 		},
 		"storage-type": {

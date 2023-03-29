@@ -1,23 +1,24 @@
 {
-	"scopeName": "source.asm",
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.asm.macro",
 	"injectionSelector": "R:source.asm",
 	"patterns": [
 		{ "include": "#comments" },
 		{ "include": "#strings" },
 		{ "include": "#named-label" },
 		{ "include": "#numeric-label" },
-		{ "include": "#identifier" },
 		{ "include": "#constant-numeric-binary" },
 		{ "include": "#constant-numeric-gameboy" },
 		{ "include": "#constant-numeric-decimal" },
 		{ "include": "#constant-numeric-hex" },
 		{ "include": "#keywords-control" },
-		{ "include": "#keywords-operators" },
 		{ "include": "#keywords-other" },
 		{ "include": "#storage-type" },
 		{ "include": "#support-class" },
 		{ "include": "#support-function" },
-		{ "include": "#support-type" }
+		{ "include": "#support-type" },
+		{ "include": "#identifier" },
+		{ "include": "#keywords-operators" }
 	],
 	"repository": {
 		"strings": {
