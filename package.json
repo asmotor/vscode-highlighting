@@ -16,84 +16,170 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "asm.680x0",
-            "aliases": ["ASMotor.680x0", "asm"],
-            "extensions": [".asm",".68k",".inc"],
-            "configuration": "./language-configuration.json"
-        },{
-            "id": "asm.6809",
-            "aliases": ["ASMotor.6809", "asm"],
-            "extensions": [".asm",".6809",".inc"],
-            "configuration": "./language-configuration.json"
-        },{
-            "id": "asm.z80",
-            "aliases": ["ASMotor.Z80", "asm"],
-            "extensions": [".asm",".z80",".inc"],
-            "configuration": "./language-configuration.json"
-        },{
-            "id": "asm.rc8",
-            "aliases": ["ASMotor.RC8", "asm"],
-            "extensions": [".asm",".rc8",".inc"],
-            "configuration": "./language-configuration.json"
-        },{
-            "id": "asm.6502",
-            "aliases": ["ASMotor.6502", "asm"],
-            "extensions": [".asm",".6502",".inc"],
-            "configuration": "./language-configuration.json"
-        },{
-            "id": "asm.dcpu",
-            "aliases": ["ASMotor.DCPU", "asm"],
-            "extensions": [".asm",".dcpu",".inc"],
-            "configuration": "./language-configuration.json"
-        },{
-            "id": "asm.mips",
-            "aliases": ["ASMotor.MIPS", "asm"],
-            "extensions": [".asm",".mips",".inc"],
-            "configuration": "./language-configuration.json"
-        },{
-            "id": "asm.schip",
-            "aliases": ["ASMotor.SCHIP", "asm"],
-            "extensions": [".asm",".chp",".inc"],
-            "configuration": "./language-configuration.json"
-        }],
-
-        "grammars": [{
-            "language": "asm.680x0",
-            "scopeName": "source.asm.680x0",
-            "path": "./syntaxes/asm.680x0.tmLanguage.json"
-        },{
-            "language": "asm.6809",
-            "scopeName": "source.asm.6809",
-            "path": "./syntaxes/asm.6809.tmLanguage.json"
-        },{
-            "language": "asm.z80",
-            "scopeName": "source.asm.z80",
-            "path": "./syntaxes/asm.z80.tmLanguage.json"
-        },{
-            "language": "asm.rc8",
-            "scopeName": "source.asm.rc8",
-            "path": "./syntaxes/asm.rc8.tmLanguage.json"
-        },{
-            "language": "asm.6502",
-            "scopeName": "source.asm.6502",
-            "path": "./syntaxes/asm.6502.tmLanguage.json"
-        },{
-            "language": "asm.dcpu",
-            "scopeName": "source.asm.dcpu",
-            "path": "./syntaxes/asm.dcpu.tmLanguage.json"
-        },{
-            "language": "asm.mips",
-            "scopeName": "source.asm.mips",
-            "path": "./syntaxes/asm.mips.tmLanguage.json"
-        },{
-            "language": "asm.schip",
-            "scopeName": "source.asm.schip",
-            "path": "./syntaxes/asm.schip.tmLanguage.json"
-        },{
-            "injectTo": ["source.asm.680x0", "source.asm.6809", "source.asm.z80", "source.asm.rc8", "source.asm.6502", "source.asm.dcpu", "source.asm.mips", "source.asm.schip"],
-            "scopeName": "source.asm.macro",
-            "path": "./syntaxes/asm.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "asm.680x0",
+                "aliases": [
+                    "ASMotor.680x0",
+                    "asm"
+                ],
+                "extensions": [
+                    ".asm",
+                    ".68k",
+                    ".inc"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "asm.6809",
+                "aliases": [
+                    "ASMotor.6809",
+                    "asm"
+                ],
+                "extensions": [
+                    ".asm",
+                    ".6809",
+                    ".inc"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "asm.z80",
+                "aliases": [
+                    "ASMotor.Z80",
+                    "asm"
+                ],
+                "extensions": [
+                    ".asm",
+                    ".z80",
+                    ".inc"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "asm.rc8",
+                "aliases": [
+                    "ASMotor.RC8",
+                    "asm"
+                ],
+                "extensions": [
+                    ".asm",
+                    ".rc8",
+                    ".inc"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "asm.6502",
+                "aliases": [
+                    "ASMotor.6502",
+                    "asm"
+                ],
+                "extensions": [
+                    ".asm",
+                    ".6502",
+                    ".inc"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "asm.dcpu",
+                "aliases": [
+                    "ASMotor.DCPU",
+                    "asm"
+                ],
+                "extensions": [
+                    ".asm",
+                    ".dcpu",
+                    ".inc"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "asm.mips",
+                "aliases": [
+                    "ASMotor.MIPS",
+                    "asm"
+                ],
+                "extensions": [
+                    ".asm",
+                    ".mips",
+                    ".inc"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "asm.schip",
+                "aliases": [
+                    "ASMotor.SCHIP",
+                    "asm"
+                ],
+                "extensions": [
+                    ".asm",
+                    ".chp",
+                    ".inc"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "asm.680x0",
+                "scopeName": "source.asm.680x0",
+                "path": "./syntaxes/asm.680x0.tmLanguage.json"
+            },
+            {
+                "language": "asm.6809",
+                "scopeName": "source.asm.6809",
+                "path": "./syntaxes/asm.6809.tmLanguage.json"
+            },
+            {
+                "language": "asm.z80",
+                "scopeName": "source.asm.z80",
+                "path": "./syntaxes/asm.z80.tmLanguage.json"
+            },
+            {
+                "language": "asm.rc8",
+                "scopeName": "source.asm.rc8",
+                "path": "./syntaxes/asm.rc8.tmLanguage.json"
+            },
+            {
+                "language": "asm.6502",
+                "scopeName": "source.asm.6502",
+                "path": "./syntaxes/asm.6502.tmLanguage.json"
+            },
+            {
+                "language": "asm.dcpu",
+                "scopeName": "source.asm.dcpu",
+                "path": "./syntaxes/asm.dcpu.tmLanguage.json"
+            },
+            {
+                "language": "asm.mips",
+                "scopeName": "source.asm.mips",
+                "path": "./syntaxes/asm.mips.tmLanguage.json"
+            },
+            {
+                "language": "asm.schip",
+                "scopeName": "source.asm.schip",
+                "path": "./syntaxes/asm.schip.tmLanguage.json"
+            },
+            {
+                "injectTo": [
+                    "source.asm.680x0",
+                    "source.asm.6809",
+                    "source.asm.z80",
+                    "source.asm.rc8",
+                    "source.asm.6502",
+                    "source.asm.dcpu",
+                    "source.asm.mips",
+                    "source.asm.schip"
+                ],
+                "scopeName": "source.asm.macro",
+                "path": "./syntaxes/asm.tmLanguage.json"
+            }
+        ]
+    },
+    "dependencies": {
+        "@vscode/vsce": "^2.18.0"
     }
 }
