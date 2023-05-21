@@ -1,3 +1,6 @@
+### 1.2.4
+Added 6502 alternate mnemonic
+
 ### 1.2.3
 Added 65C02(S) instructions, fixed MACRO keyword
 
