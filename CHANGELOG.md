@@ -1,3 +1,6 @@
+### 1.2.3
+Added 65C02(S) instructions, fixed MACRO keyword
+
 ### 1.2.2
 Updated README
 
