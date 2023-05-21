@@ -4,6 +4,8 @@
 	"scopeName": "source.asm.6502",
 	"patterns": [
 		{ "include": "#mnemonics" },
+		{ "include": "#mnemonics-65c02" },
+		{ "include": "#mnemonics-65c02s" },
 		{ "include": "#mnemonics-undoc0" },
 		{ "include": "#mnemonics-undoc1" },
 		{ "include": "#mnemonics-undoc2" },
@@ -13,6 +15,14 @@
 	"repository": {
 		"mnemonics": {
 			"match": "\\b(?i:ADC|AND|ASL|BIT|BPL|BMI|BVC|BVS|BCC|BCS|BNE|BEQ|BRK|CMP|CPX|CPY|DEC|EOR|CLC|SEC|CLI|SEI|CLV|CLD|SED|INC|JMP|JSR|LDA|LDX|LDY|LSR|NOP|ORA|TAX|TXA|DEX|INX|TAY|TYA|DEY|INY|ROL|ROR|RTI|RTS|SBC|STA|TXS|TSX|PHA|PLA|PHP|PLP|STX|STY)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
+		"mnemonics-65c02": {
+			"match": "\\b(?i:BRA|DEA|INA|PHX|PHY|PLX|PLY|STZ|TRB|TSB|STP|WAI)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
+		"mnemonics-65c02s": {
+			"match": "\\b(?i:BBR|BBR0|BBR1|BBR2|BBR3|BBR4|BBR5|BBR6|BBR7|BBS|BBS0|BBS1|BBS2|BBS3|BBS4|BBS5|BBS6|BBS7|RMB|RMB0|RMB1|RMB2|RMB3|RMB4|RMB5|RMB6|RMB7|SMB|SMB0|SMB1|SMB2|SMB3|SMB4|SMB5|SMB6|SMB7)\\b",
 			"name": "keyword.other.asm.mnemonic"
 		},
 		"mnemonics-undoc0": {

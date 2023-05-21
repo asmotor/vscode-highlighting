@@ -55,7 +55,7 @@
 		},
 		"keywords-control": {
 			"name": "keyword.control.asm",
-			"match": "\\b(?i:ELSE|END|ENDC|ENDM|ENDR|IF|IFC|IFD|IFEQ|IFGE|IFGT|IFLE|IFLT|IFNC|IFND|IFNE|MEXIT|REPT|REXIT)\\b"
+			"match": "\\b(?i:MACRO|ELSE|END|ENDC|ENDM|ENDR|IF|IFC|IFD|IFEQ|IFGE|IFGT|IFLE|IFLT|IFNC|IFND|IFNE|MEXIT|REPT|REXIT)\\b"
 		},
 		"keywords-operators": {
 			"name": "keyword.operator.asm",
@@ -67,7 +67,7 @@
 		},
 		"storage-type": {
 			"name": "storage.type.asm",
-			"match": "\\b(?i:MACRO|EQU|EQUS|SET|EXPORT|GLOBAL|IMPORT|XDEF|XREF|__DSB|__DSW|__DSL|__DCB|__DCW|__DCL|__RB|__RW|__RL)\\b"
+			"match": "\\b(?i:EQU|EQUS|SET|EXPORT|GLOBAL|IMPORT|XDEF|XREF|__DSB|__DSW|__DSL|__DCB|__DCW|__DCL|__RB|__RW|__RL)\\b"
 		},
 		"support-class": {
 			"name": "support.class.asm",
@@ -79,7 +79,7 @@
 		},
 		"support-type": {
 			"name": "support.type.asm",
-			"match": "\\b(?i:CODE|DATA|BSS|HOME|GROUP)\\b"
+			"match": "\\b(?i:CODE|DATA|BSS|HOME|GROUP|ROOT)\\b"
 		},
 		"identifier": {
 			"name": "variable.other",
