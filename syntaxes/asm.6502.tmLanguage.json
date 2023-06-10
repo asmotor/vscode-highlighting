@@ -6,11 +6,13 @@
 		{ "include": "#mnemonics" },
 		{ "include": "#mnemonics-65c02" },
 		{ "include": "#mnemonics-65c02s" },
+		{ "include": "#mnemonics-65c816" },
 		{ "include": "#mnemonics-undoc0" },
 		{ "include": "#mnemonics-undoc1" },
 		{ "include": "#mnemonics-undoc2" },
 		{ "include": "#addressing-modes" },
-		{ "include": "#storage-type" }
+		{ "include": "#storage-type" },
+		{ "include": "#keywords" }
 	],
 	"repository": {
 		"mnemonics": {
@@ -23,6 +25,10 @@
 		},
 		"mnemonics-65c02s": {
 			"match": "\\b(?i:BBR|BBR0|BBR1|BBR2|BBR3|BBR4|BBR5|BBR6|BBR7|BBS|BBS0|BBS1|BBS2|BBS3|BBS4|BBS5|BBS6|BBS7|RMB|RMB0|RMB1|RMB2|RMB3|RMB4|RMB5|RMB6|RMB7|SMB|SMB0|SMB1|SMB2|SMB3|SMB4|SMB5|SMB6|SMB7)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
+		"mnemonics-65c816": {
+			"match": "\\b(?i:JML|JSL|RTL|REP|SEP|MVN|MVP|PEA|PEI|PER|PHB|PHD|PHK|PLB|PLD|TXY|TYX|TCD|TCS|TDC|TSC|XBA|XCE)\\b",
 			"name": "keyword.other.asm.mnemonic"
 		},
 		"mnemonics-undoc0": {
@@ -44,6 +50,10 @@
 		"storage-type": {
 			"name": "storage.type.asm",
 			"match": "\\b(?i:DS|DB|DW|RB|RW)\\b"
+		},
+		"keywords": {
+			"name": "storage.type.asm",
+			"match": "\\b(?i:BITS)\\b"
 		}
 	}
 }

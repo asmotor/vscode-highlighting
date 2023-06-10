@@ -1,3 +1,8 @@
+### 1.3.0
+Added 65C816 instructions.
+Fixed semi-colon in strings.
+Added character constants.
+
 ### 1.2.4
 Added 6502 alternate mnemonic
 

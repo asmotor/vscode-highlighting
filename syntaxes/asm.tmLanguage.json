@@ -3,7 +3,6 @@
 	"scopeName": "source.asm.macro",
 	"injectionSelector": "R:source.asm",
 	"patterns": [
-		{ "include": "#comments" },
 		{ "include": "#strings" },
 		{ "include": "#named-label" },
 		{ "include": "#numeric-label" },
@@ -11,8 +10,10 @@
 		{ "include": "#constant-numeric-gameboy" },
 		{ "include": "#constant-numeric-decimal" },
 		{ "include": "#constant-numeric-hex" },
+		{ "include": "#constant-char" },
 		{ "include": "#keywords-control" },
 		{ "include": "#keywords-other" },
+		{ "include": "#comments" },
 		{ "include": "#storage-type" },
 		{ "include": "#support-class" },
 		{ "include": "#support-function" },
@@ -52,6 +53,10 @@
 		"constant-numeric-decimal": {
 			"name": "constant.numeric.asm",
 			"match": "([0-9]+)"
+		},
+		"constant-char": {
+			"name": "constant.numeric.asm",
+			"match": "\\'(\\.|[^\\'])+\\'"
 		},
 		"keywords-control": {
 			"name": "keyword.control.asm",
