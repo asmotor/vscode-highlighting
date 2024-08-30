@@ -7,6 +7,7 @@
 		{ "include": "#mnemonics-65c02" },
 		{ "include": "#mnemonics-65c02s" },
 		{ "include": "#mnemonics-65c816" },
+		{ "include": "#mnemonics-45gs02" },
 		{ "include": "#mnemonics-undoc0" },
 		{ "include": "#mnemonics-undoc1" },
 		{ "include": "#mnemonics-undoc2" },
@@ -31,6 +32,10 @@
 			"match": "\\b(?i:JML|JSL|RTL|REP|SEP|MVN|MVP|PEA|PEI|PER|PHB|PHD|PHK|PLB|PLD|TXY|TYX|TCD|TCS|TDC|TSC|XBA|XCE)\\b",
 			"name": "keyword.other.asm.mnemonic"
 		},
+		"mnemonics-45gs02": {
+			"match": "\\b(?i:ADCQ|ANDQ|ASLQ|ASRQ|BITQ|CMPQ|DEQ|EORQ|INQ|LDQ|LSRQ|ORQ|ROLQ|RORQ|SBCQ|STQ)\\b",
+			"name": "keyword.other.asm.mnemonic"
+		},
 		"mnemonics-undoc0": {
 			"match": "\\b(?i:AAC|AAX|ARR|ASR|ATX|AXA|AXS|DCP|DOP|ISC|KIL|LAR|LAX|RLA|RRA|SLO|SRE|SXA|SYA|TOP|XAA|XAS)\\b",
 			"name": "keyword.other.asm.mnemonic"
@@ -44,7 +49,7 @@
 			"name": "keyword.other.asm.mnemonic"
 		},
 		"addressing-modes": {
-			"match": "\\b(?i:A|X|Y)\\b",
+			"match": "\\b(?i:A|X|Y|Z|S|SP|Q)\\b",
 			"name": "support.variable.asm"
 		},
 		"storage-type": {
@@ -53,7 +58,7 @@
 		},
 		"keywords": {
 			"name": "storage.type.asm",
-			"match": "\\b(?i:BITS)\\b"
+			"match": "\\b(?i:BITS:SETBP)\\b"
 		}
 	}
 }
