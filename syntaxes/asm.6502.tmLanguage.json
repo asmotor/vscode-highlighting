@@ -33,7 +33,7 @@
 			"name": "keyword.other.asm.mnemonic"
 		},
 		"mnemonics-45gs02": {
-			"match": "\\b(?i:ADCQ|ANDQ|ASLQ|ASRQ|BITQ|CMPQ|DEQ|EORQ|INQ|LDQ|LSRQ|ORQ|ROLQ|RORQ|SBCQ|STQ)\\b",
+			"match": "\\b(?i:ADCQ|ANDQ|ASLQ|ASRQ|BITQ|CMPQ|DEQ|EORQ|INQ|LDQ|LSRQ|ORQ|ROLQ|RORQ|SBCQ|STQ|ASR|ASW|BSR|CLE|CPZ|DEW|DEZ|INW|INZ|LBCC|LBCS|LBEQ|LBMI|LBNE|LBPL|LBRA|LBVC|LBVS|LDZ|MAP|NEG|PHW|PHZ|PLZ|ROW|SEE|TAB|TAZ|TBA|TSY|TYS|TZA)\\b",
 			"name": "keyword.other.asm.mnemonic"
 		},
 		"mnemonics-undoc0": {

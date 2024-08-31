@@ -24,5 +24,10 @@
         ["(", ")"],
         ["\"", "\""],
         ["'", "'"]
-    ]
+    ],
+    // indent after label and outdent if a label is defined at an indented position
+    "indentationRules": {
+        "increaseIndentPattern": "^(\\.?[A-Za-z_][A-Za-z0-9_]*)|(([0-9]+)\\$)$",
+        "decreaseIndentPattern": "^(\\s*\\.?[A-Za-z_][A-Za-z0-9_]*:)|(([0-9]+)\\$)$"   
+    }
 }
