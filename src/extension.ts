@@ -25,12 +25,11 @@ export function activate(context: vscode.ExtensionContext) {
 		// extract labels
 		for (var i = 0; i < document.lineCount; ++i) {
 			var line = document.lineAt(i)
-			if (line.firstNonWhitespaceCharacterIndex == 0 && !line.isEmptyOrWhitespace) {
+			if (line.firstNonWhitespaceCharacterIndex == 0 && !line.isEmptyOrWhitespace && line.text[0] != ";") {
 				var parts = line.text.split(/\s/).filter(v => v != '');
 
 				if (parts.length >= 1) {
 					var label = parts[0];
-					var directive: string | null;
 					var kind: vscode.SymbolKind = vscode.SymbolKind.Function
 					let is_local = label[0] == '.' || label[label.length - 1] == '$';
 
@@ -46,7 +45,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 					// Determine symbol kind
 					if (parts.length >= 2) {
-						directive = parts[1].toLowerCase();
+						let directive = parts[1].toLowerCase();
 						switch (directive) {
 							case "equ":
 							case "set":
@@ -87,7 +86,10 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	}
 
-	function symbolLengthAt(line: string, index: number): number {
+
+	// Return the length of a numeric label at the specified index.
+	// A numeric label has the form "n[n...]$"
+	function numericLabelLength(line: string, index: number): number {
 		let startIndex = index;
 
 		if (line[startIndex] >= "0" && line[startIndex] <= "9") {
@@ -100,82 +102,153 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 		}
 
-		var endIndex = startIndex;
-		if (line[endIndex] == ".") {
-			if (isSymbolStartCharacter(line[endIndex + 1]))
-				endIndex += 1;
-		}
-
 		return 0;
 	}
 
+
+	// Determine if a character is a valid first label character
 	function isSymbolStartCharacter(ch: string) {
 		return (ch >= "A" && ch <= "Z") || (ch >= "a" && ch <= "z") || ch == "_";
 	}
 
 
-	function isSymbolStartOrLocalCharacter(ch: string) {
-		return isSymbolStartCharacter(ch) || ch == ".";
-	}
-
-
+	// Determine if a character is a valid label character
 	function isSymbolMiddleCharacter(ch: string) {
 		return isSymbolStartCharacter(ch) || (ch >= "0" && ch <= "9");
 	}
 
 
-	function isSymbolAnyCharacter(ch: string) {
-		return isSymbolMiddleCharacter(ch) || ch == "." || ch == "$";
+	// Return the length of an alpha numeric label at index
+	function alphaNumericLabelLength(line: string, index: number): number {
+		if (index >= line.length)
+			return 0;
+
+		let startIndex = index;
+		if (isSymbolStartCharacter(line[startIndex])) {
+			var endIndex = startIndex + 1;
+
+			while (index < line.length && isSymbolMiddleCharacter(line[endIndex])) {
+				endIndex += 1;
+			}
+
+			return endIndex - startIndex;
+		}
+
+		return 0;
 	}
 
 
-	function symbolAt(line: string, position: number): string | null {
-		// grab possible symbol
-		var start = position;
+	// Return the length of a local label at index
+	function localLabelLength(line: string, index: number): number {
+		let startIndex = index;
 
-		if (start > 0 && start == line.length)
-			start -= 1;
+		if (line[startIndex] == ".") {
+			var endIndex = startIndex + 1;
+			endIndex += alphaNumericLabelLength(line, endIndex);
 
-		if (!isSymbolAnyCharacter(line[start]))
-			return null;
-
-		while (start > 0) {
-			if (line[start] == ".")
-				break;
-		
-			var prevChar = line[start - 1];
-
-			if (isSymbolStartOrLocalCharacter(prevChar)) {
-				start -= 1;
-			} else if (isSymbolAnyCharacter(prevChar) && isSymbolStartOrLocalCharacter(line[start - 2])) {
-				start -= 1;
-			} else {
-				break;
-			}
+			let length = endIndex - startIndex;
+			if (length > 1)
+				return length;
 		}
 
-		var end = position;
-		while (end < line.length - 1) {
-			if (line[end] == "$")
-				break;
-		
-			var nextChar = line[end + 1];
-
-			if (isSymbolAnyCharacter(nextChar) || nextChar == "$") {
-				end += 1;
-			} else {
-				break;
-			}
-		}
-
-		return line.slice(start, end + 1);
+		return 0;
 	}
 
+
+	// Return the length of label plus an optional local label
+	function labelAndLocalLength(line: string, index: number): number {
+		let labelLength = alphaNumericLabelLength(line, index);
+		if (labelLength > 0) {
+			labelLength += localLabelLength(line, index + labelLength);
+		}
+		return labelLength;
+	}
+
+
+	function symbolLengthAt(line: string, index: number): number {
+		let numericLength = numericLabelLength(line, index);
+		if (numericLength > 0)
+			return numericLength;
+
+		let localLength = localLabelLength(line, index);
+		if (localLength > 0)
+			return localLength;
+
+		return labelAndLocalLength(line, index);
+	}
+
+
+	// Find the longest label containing position
+	function symbolAt(line: string, position: number): string | undefined {
+		let cursor = position;
+		var bestPosition = -1;
+		var longest = -1;
+
+		while (position >= 0) {
+			let length = symbolLengthAt(line, position);
+			if (length > 0 && position + length >= cursor && length > longest) {
+				bestPosition = position;
+				longest = length;
+			}
+			position -= 1;
+		}
+
+		if (bestPosition < 0)
+			return undefined;
+
+		return line.slice(bestPosition, bestPosition + longest);
+	}
+
+
+	function findSymbolInDocument(document: vscode.TextDocument, scope: string, symbol: string): vscode.Location | undefined {
+		// local label in this file only
+		var definitions = documentSymbolDefinitions(document);
+
+		for (let definition of definitions) {
+			if (definition.containerName == scope && definition.name == symbol) {
+				return definition.location;
+			}
+		}
+
+		return undefined;
+	}
 
 	let definitionProvider: vscode.DefinitionProvider = {
 		provideDefinition(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.ProviderResult<vscode.Definition | vscode.LocationLink[]> {
 			var line = document.lineAt(position.line).text;
 			var symbol = symbolAt(line, position.character);
+
+			if (symbol != undefined) {
+				var scope = "";
+				let dotIndex = symbol.indexOf(".");
+				if (dotIndex != -1) {
+					scope = symbol.slice(0, dotIndex);
+					symbol = symbol.slice(dotIndex, symbol.length);
+				}
+
+				if (dotIndex == 0) {
+					// local label in this file only
+					var definitions = documentSymbolDefinitions(document);
+					var lastScopeLine = 0;
+
+					for (let definition of definitions) {
+						if (definition.containerName == "") {
+							lastScopeLine = definition.location.range.start.line;
+						} else if (definition.name == symbol && position.line >= lastScopeLine) {
+							return definition.location;
+						}
+					}
+				}
+
+				for (let doc of vscode.workspace.textDocuments) {
+					if (doc.languageId.startsWith("asm.")) {
+						let location = findSymbolInDocument(doc, scope, symbol);
+						if (location != undefined)
+							return location;
+					}
+				}
+				
+			}
 
 			return null;
 		}
