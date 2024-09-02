@@ -5,13 +5,23 @@ function isWhitespace(ch: string) {
 }
 
 
-type symbolState = {
+type SymbolState = {
     scope: string,
-    symbols: vscode.SymbolInformation[]
+    symbols: vscode.SymbolInformation[],
+    seenSymbols: Set<string>
 };
 
 
-function lineSymbols(line: string, lineNumber: number, uri: vscode.Uri, state: symbolState) {
+function newSymbolState(): SymbolState {
+    return {
+        scope: "",
+        symbols: [],
+        seenSymbols: new Set<string>()
+    };
+}
+
+
+function lineSymbols(line: string, lineNumber: number, uri: vscode.Uri, state: SymbolState) {
     if (line != "" && !isWhitespace(line[0]) && line[0] != ";") {
         var parts = line.split(/\s/).filter(v => v != '');
 
@@ -29,6 +39,12 @@ function lineSymbols(line: string, lineNumber: number, uri: vscode.Uri, state: s
             if (!is_local) {
                 state.scope = "";
             }
+
+            let symbolScopeAndName = state.scope + label;
+            if (state.seenSymbols.has(symbolScopeAndName))
+                return;
+
+            state.seenSymbols.add(symbolScopeAndName);
 
             // Determine symbol kind
             if (parts.length >= 2) {
@@ -65,12 +81,7 @@ function lineSymbols(line: string, lineNumber: number, uri: vscode.Uri, state: s
 
 
 export function documentSymbols(document: vscode.TextDocument): vscode.SymbolInformation[] {
-    var state = {
-        scope: "",
-        symbols: []
-    };
-
-    // extract labels
+    let state = newSymbolState();
     for (var i = 0; i < document.lineCount; ++i) {
         var line = document.lineAt(i)
         lineSymbols(line.text, i, document.uri, state);
@@ -81,12 +92,7 @@ export function documentSymbols(document: vscode.TextDocument): vscode.SymbolInf
 
 
 export function lineArraySymbols(document: string[], uri: vscode.Uri): vscode.SymbolInformation[] {
-    var state = {
-        scope: "",
-        symbols: []
-    };
-
-    // extract labels
+    let state = newSymbolState();
     for (var i = 0; i < document.length; ++i) {
         lineSymbols(document[i], i, uri, state);
     }
