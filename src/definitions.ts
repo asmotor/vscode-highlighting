@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { documentSymbols, lineArraySymbols } from "./document_symbols";
+import { fileEndings } from "./constants";
 
 // Return the length of a numeric label at the specified index.
 // A numeric label has the form "n[n...]$"
@@ -180,7 +181,7 @@ export let definitionProvider: vscode.DefinitionProvider = {
                     return location;
             }
 
-            for (let fileUri of await vscode.workspace.findFiles("**/*.{asm,i,inc,68k,6809,z80,rc8,6502,dcpu,mips,chp}")) {
+            for (let fileUri of await vscode.workspace.findFiles("**/*.{" + fileEndings + "}")) {
                 let bytes = await vscode.workspace.fs.readFile(fileUri);
                 let text = new TextDecoder("latin1").decode(bytes);
                 let lines = text.split("\n");
