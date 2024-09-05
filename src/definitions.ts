@@ -173,12 +173,11 @@ export let definitionProvider: vscode.DefinitionProvider = {
                     return location;
             }
 
-            for (let doc of vscode.workspace.textDocuments) {
-                if (doc.languageId.startsWith("asm.")) {
-                    let location = findSymbolInDocument(doc, scope, symbol);
-                    if (location != undefined)
-                        return location;
-                }
+            let asmDocuments = vscode.workspace.textDocuments.filter(v => v.languageId.startsWith("asm."));
+            for (let doc of asmDocuments) {
+                let location = findSymbolInDocument(doc, scope, symbol);
+                if (location != undefined)
+                    return location;
             }
 
             for (let fileUri of await vscode.workspace.findFiles("**/*.{asm,i,inc,68k,6809,z80,rc8,6502,dcpu,mips,chp}")) {

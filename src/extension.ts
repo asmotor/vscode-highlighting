@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { documentSymbolProvider } from "./document_symbols";
 import { definitionProvider } from "./definitions";
+import { switchSourceHeader } from "./switch_source_header";
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -21,4 +22,7 @@ export function activate(context: vscode.ExtensionContext) {
 			vscode.languages.registerDocumentSymbolProvider(language, documentSymbolProvider),
 			vscode.languages.registerDefinitionProvider(language, definitionProvider)
 		));
+
+	context.subscriptions.push(vscode.commands.registerCommand(
+		'asmotor.switchheadersource', () => switchSourceHeader(context)));
 }

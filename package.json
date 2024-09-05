@@ -35,6 +35,21 @@
 		"typescript": "^5.5.2"
 	},
     "contributes": {
+        "commands": [
+            {
+                "command": "asmotor.switchheadersource",
+                "category": "asmotor",
+                "title": "Switch Between Source/Header"
+            }
+        ],
+        "keybindings":[
+            {
+                "command": "asmotor.switchheadersource",
+                "key": "Alt+o",
+                "mac": "Alt+cmd+o",
+                "when": "editorTextFocus && editorLangId =~ /^asm\\..*/"
+            }
+        ],
         "languages": [
             {
                 "id": "asm.680x0",
