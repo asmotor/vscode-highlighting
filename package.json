@@ -8,7 +8,7 @@
         "url": "https://github.com/asmotor/vscode-highlighting.git"
     },
     "homepage": "https://github.com/asmotor/vscode-highlighting/blob/master/README.md",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "engines": {
         "vscode": "^1.36.0"
     },
@@ -35,6 +35,21 @@
 		"typescript": "^5.5.2"
 	},
     "contributes": {
+        "commands": [
+            {
+                "command": "asmotor.switchheadersource",
+                "category": "asmotor",
+                "title": "Switch Between Source/Header"
+            }
+        ],
+        "keybindings":[
+            {
+                "command": "asmotor.switchheadersource",
+                "key": "Alt+o",
+                "mac": "Alt+cmd+o",
+                "when": "editorTextFocus && editorLangId =~ /^asm\\..*/"
+            }
+        ],
         "languages": [
             {
                 "id": "asm.680x0",
