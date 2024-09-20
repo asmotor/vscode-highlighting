@@ -10,30 +10,30 @@
     "homepage": "https://github.com/asmotor/vscode-highlighting/blob/master/README.md",
     "version": "1.4.0",
     "engines": {
-        "vscode": "^1.36.0"
+        "vscode": "^1.73.0"
     },
     "categories": [
         "Programming Languages"
     ],
-    "license":"MIT",
-	"activationEvents": [
-		"onLanguage:asm.*"
-	],
-	"main": "./out/extension.js",
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"lint": "eslint \"src/**/*.ts\"",
-		"watch": "tsc -watch -p ./"
-	},
-	"devDependencies": {
-		"@types/node": "^18",
-		"@types/vscode": "^1.73.0",
-		"@typescript-eslint/eslint-plugin": "^7.14.0",
-		"@typescript-eslint/parser": "^7.14.0",
-		"eslint": "^8.26.0",
-		"typescript": "^5.5.2"
-	},
+    "license": "MIT",
+    "activationEvents": [
+        "onLanguage:asm.*"
+    ],
+    "main": "./out/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint \"src/**/*.ts\"",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^18",
+        "@types/vscode": "^1.73.0",
+        "@typescript-eslint/eslint-plugin": "^7.14.0",
+        "@typescript-eslint/parser": "^7.14.0",
+        "eslint": "^8.26.0",
+        "typescript": "^5.5.2"
+    },
     "contributes": {
         "commands": [
             {
@@ -42,7 +42,7 @@
                 "title": "Switch Between Source/Header"
             }
         ],
-        "keybindings":[
+        "keybindings": [
             {
                 "command": "asmotor.switchheadersource",
                 "key": "Alt+o",
