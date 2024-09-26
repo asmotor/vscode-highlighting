@@ -1,3 +1,6 @@
+### 1.4.1
+Added an icon.
+
 ### 1.4.0
 Added 4510/45GS02 instructions.
 Go to definition, extract symbols and more implemented.

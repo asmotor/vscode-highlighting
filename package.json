@@ -3,12 +3,13 @@
     "displayName": "ASMotor",
     "publisher": "ASMotor",
     "description": "Syntax highlighting for the ASMotor assembly language",
+    "icon": "./images/dip40.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/asmotor/vscode-highlighting.git"
     },
     "homepage": "https://github.com/asmotor/vscode-highlighting/blob/master/README.md",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "engines": {
         "vscode": "^1.73.0"
     },
