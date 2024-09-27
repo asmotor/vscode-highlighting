@@ -1,3 +1,6 @@
+### 1.4.2
+Added missing 45GS02 mnemonics.
+
 ### 1.4.1
 Added an icon.
 
