@@ -94,7 +94,7 @@ function symbolLengthAt(line: string, index: number): number {
 
 
 // Find the longest label containing position
-function symbolAt(line: string, position: number): string | undefined {
+export function symbolAt(line: string, position: number): string | undefined {
     let cursor = position;
     var bestPosition = -1;
     var longest = -1;
