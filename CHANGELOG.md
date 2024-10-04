@@ -1,3 +1,6 @@
+### 1.4.3
+Added new keywords.
+
 ### 1.4.2
 Added missing 45GS02 mnemonics.
 
