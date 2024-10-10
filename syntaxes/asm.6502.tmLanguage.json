@@ -54,7 +54,7 @@
 		},
 		"storage-type": {
 			"name": "storage.type.asm",
-			"match": "\\b(?i:DS|DB|DW|RB|RW)\\b"
+			"match": "\\b(?i:DS|DB|DW|DL|RB|RW|RL)\\b"
 		},
 		"keywords": {
 			"name": "storage.type.asm",
