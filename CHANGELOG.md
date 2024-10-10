@@ -1,3 +1,10 @@
+### 1.4.4
+Fixed indent after label.
+
+Added new keywords.
+
+Restrict completion words to label-like words.
+
 ### 1.4.3
 Added new keywords.
 
@@ -9,11 +16,14 @@ Added an icon.
 
 ### 1.4.0
 Added 4510/45GS02 instructions.
+
 Go to definition, extract symbols and more implemented.
 
 ### 1.3.0
 Added 65C816 instructions.
+
 Fixed semi-colon in strings.
+
 Added character constants.
 
 ### 1.2.4
