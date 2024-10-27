@@ -1,3 +1,6 @@
+### 1.4.6
+* Machine definition language highlighting updated.
+
 ### 1.4.5
 * Implemented highlighting for the machine definition language.
 * Added missing `ALIGN` keyword.

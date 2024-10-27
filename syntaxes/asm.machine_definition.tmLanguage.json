@@ -6,6 +6,8 @@
 		{ "include": "#comments" },
 		{ "include": "#directive" },
 		{ "include": "#fileformat" },
+		{ "include": "#operators" },
+		{ "include": "#identifier" },
 		{ "include": "#constant-numeric-binary" },
 		{ "include": "#constant-numeric-hex" },
 		{ "include": "#constant-numeric-decimal" }
@@ -23,6 +25,10 @@
 			"name": "support.type",
 			"match": "\\b(CBM_PRG|BIN|GAME_BOY|HUNK_EXE|HUNK_OBJ|MEGA_DRIVE|MASTER_SYSTEM|HC800_KERNEL|HC800|PGZ|KUP|KUPP|COCO_QL|MEGA65_PRG)\\b"
 		},
+		"operators": {
+			"name": "keyword.operator",
+			"match": "(\\+|-|\\*|/|:|@)"
+		},
 		"constant-numeric-binary": {
 			"name": "constant.numeric.asm",
 			"match": "(\\%[01]+)"
@@ -34,6 +40,10 @@
 		"constant-numeric-decimal": {
 			"name": "constant.numeric.asm",
 			"match": "([0-9]+)"
+		},
+		"identifier": {
+			"name": "variable.other",
+			"match": "(\\.?[A-Za-z_][A-Za-z0-9_]*)"
 		}
 	}
 }
