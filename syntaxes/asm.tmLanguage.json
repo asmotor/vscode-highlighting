@@ -84,7 +84,7 @@
 		},
 		"support-type": {
 			"name": "support.type.asm",
-			"match": "\\b(?i:CODE|DATA|BSS|HOME|GROUP|ROOT)\\b"
+			"match": "\\b(?i:CODE|DATA|BSS|HOME|GROUP|ALIGN|ROOT)\\b"
 		},
 		"identifier": {
 			"name": "variable.other",

@@ -9,7 +9,7 @@
         "url": "https://github.com/asmotor/vscode-highlighting.git"
     },
     "homepage": "https://github.com/asmotor/vscode-highlighting/blob/master/README.md",
-    "version": "1.4.4",
+    "version": "1.4.5",
     "engines": {
         "vscode": "^1.73.0"
     },
@@ -52,6 +52,13 @@
             }
         ],
         "languages": [
+            {
+                "id": "asmotor.machine_definition",
+                "extensions": [
+                    ".def"
+                ],
+                "configuration": "./language-configuration-machdef.json"
+            },
             {
                 "id": "asm.680x0",
                 "aliases": [
@@ -158,6 +165,11 @@
             }
         ],
         "grammars": [
+            {
+                "language": "asmotor.machine_definition",
+                "scopeName": "source.link.machine_definition",
+                "path": "./syntaxes/asm.machine_definition.tmLanguage.json"
+            },
             {
                 "language": "asm.680x0",
                 "scopeName": "source.asm.680x0",

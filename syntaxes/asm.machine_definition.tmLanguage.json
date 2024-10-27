@@ -1,0 +1,40 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "asmotor.machine_definition",
+	"scopeName": "source.link.machine_definition",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#directive" },
+		{ "include": "#fileformat" },
+		{ "include": "#constant-numeric-binary" },
+		{ "include": "#constant-numeric-hex" },
+		{ "include": "#constant-numeric-decimal" }
+	],
+	"repository": {
+		"comments": {
+			"name": "comment.line.asm",
+			"match": "(;.*)$"
+		},
+		"directive": {
+			"match": "\\b(POOL|POOLS|GROUP|FORMATS)\\b",
+			"name": "keyword.control"
+		},
+		"fileformat": {
+			"name": "support.type",
+			"match": "\\b(CBM_PRG|BIN|GAME_BOY|HUNK_EXE|HUNK_OBJ|MEGA_DRIVE|MASTER_SYSTEM|HC800_KERNEL|HC800|PGZ|KUP|KUPP|COCO_QL|MEGA65_PRG)\\b"
+		},
+		"constant-numeric-binary": {
+			"name": "constant.numeric.asm",
+			"match": "(\\%[01]+)"
+		},
+		"constant-numeric-hex": {
+			"name": "constant.numeric.asm",
+			"match": "(\\$[0-9a-fA-F]+)"
+		},
+		"constant-numeric-decimal": {
+			"name": "constant.numeric.asm",
+			"match": "([0-9]+)"
+		}
+	}
+}
+
