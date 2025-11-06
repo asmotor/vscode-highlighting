@@ -1,3 +1,7 @@
+### 1.4.7
+* Added missing 45GS02 instructions.
+* Added new directives from 1.3.4 release.
+
 ### 1.4.6
 * Machine definition language highlighting updated.
 

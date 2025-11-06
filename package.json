@@ -9,7 +9,7 @@
         "url": "https://github.com/asmotor/vscode-highlighting.git"
     },
     "homepage": "https://github.com/asmotor/vscode-highlighting/blob/master/README.md",
-    "version": "1.4.6",
+    "version": "1.4.7",
     "engines": {
         "vscode": "^1.73.0"
     },

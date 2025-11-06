@@ -68,7 +68,7 @@
 		},
 		"keywords-other": {
 			"name": "keyword.other.asm",
-			"match": "\\b(?i:CNOP|EVEN|INCBIN|INCLUDE|ONCE|OPT|ORG|POPO|POPS|PURGE|PUSHO|PUSHS|RSEND|RSRESET|RSSET|SECTION|SHIFT|FAIL|WARN|PRINTF|PRINTT|PRINTV)\\b"
+			"match": "\\b(?i:RANDSEED|ASSERTF|ASSERTW|CNOP|EVEN|INCBIN|INCLUDE|ONCE|OPT|ORG|POPO|POPS|PURGE|PUSHO|PUSHS|RSEND|RSRESET|RSSET|SECTION|SHIFT|FAIL|WARN|PRINTF|PRINTT|PRINTV)\\b"
 		},
 		"storage-type": {
 			"name": "storage.type.asm",
@@ -80,11 +80,11 @@
 		},
 		"support-function": {
 			"name": "support.function.asm",
-			"match": "\\b(?i:ACOS|ASIN|ATAN|ATAN2|COMPARETO|COS|DEF|HIGHLIMIT|INDEXOF|LENGTH|LOWER|LOWLIMIT|SIN|SLICE|TAN|UPPER)\\b"
+			"match": "\\b(?i:RAND|ACOS|ASIN|ATAN|ATAN2|COMPARETO|COS|DEF|HIGHLIMIT|INDEXOF|LENGTH|LOWER|LOWLIMIT|SIN|SLICE|TAN|UPPER)\\b"
 		},
 		"support-type": {
 			"name": "support.type.asm",
-			"match": "\\b(?i:CODE|DATA|BSS|HOME|GROUP|ALIGN|ROOT)\\b"
+			"match": "\\b(?i:CODE|DATA|BSS|HOME|GROUP|ALIGN|ROOT|PAGE)\\b"
 		},
 		"identifier": {
 			"name": "variable.other",
