@@ -18,7 +18,7 @@
 			"match": "(;.*)$"
 		},
 		"directive": {
-			"match": "\\b(POOL|POOLS|GROUP|FORMATS)\\b",
+			"match": "\\b(POOL|POOLS|GROUP|SYMBOL|FORMATS)\\b",
 			"name": "keyword.control"
 		},
 		"fileformat": {
