@@ -6,5 +6,5 @@
     vsce package
 
 @publish ovsx_token:
-    vsce publish
-    npx ovsx publish -p {{ovsx_token}}
+    -vsce publish
+    -npx ovsx publish -p {{ovsx_token}}
