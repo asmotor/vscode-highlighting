@@ -80,7 +80,7 @@
 		},
 		"support-function": {
 			"name": "support.function.asm",
-			"match": "\\b(?i:RAND|ACOS|ASIN|ATAN|ATAN2|COMPARETO|COS|DEF|HIGHLIMIT|INDEXOF|LENGTH|LOWER|LOWLIMIT|SIN|SLICE|TAN|UPPER)\\b"
+			"match": "\\b(?i:RAND|ACOS|ASIN|ATAN|ATAN2|COMPARETO|COS|DEF|HIGHLIMIT|INDEXOF|LENGTH|LOWER|LOWLIMIT|SIN|SLICE|TAN|UPPER|ASFLOAT)\\b"
 		},
 		"support-type": {
 			"name": "support.type.asm",

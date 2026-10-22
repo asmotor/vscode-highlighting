@@ -13,7 +13,7 @@
 			"name": "keyword.other.asm.mnemonic"
 		},
 		"addressing-modes": {
-			"match": "\\b(?i:F|T|B|C|D|E|H|L|FT|BC|DE|HL|\\(C\\)|\\(FT\\)|\\(BC\\)|\\(DE\\)|\\(HL\\)|\\(FT+\\)|\\(BC+\\)|\\(DE+\\)|\\(HL+\\)|\\(-FT\\)|\\(-BC\\)|\\(-DE\\)|\\(-HL\\)|EQ|NE|LE|GT|LT|GE|LEU|GTU|LTU|GEU|Z|NZ|NC)\\b",
+			"match": "\\b(?i:F|T|B|C|D|E|H|L|FT|BC|DE|HL|\\(C\\)|\\(FT\\)|\\(BC\\)|\\(DE\\)|\\(HL\\)|\\(FT+\\)|\\(BC+\\)|\\(DE+\\)|\\(HL+\\)|\\(-FT\\)|\\(-BC\\)|\\(-DE\\)|\\(-HL\\)|EQ|NE|LE|GT|LT|GE|LEU|GTU|LTU|GEU|Z|NZ|CC|CS)\\b",
 			"name": "support.variable.asm"
 		},
 		"storage-type": {
