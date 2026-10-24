@@ -1,3 +1,6 @@
+### 1.4.11
+* RC800: added the `STOW` instruction.
+
 ### 1.4.10
 * RC800: added the `CC` and `CS` condition codes; the removed `NC` alias is no longer highlighted.
 * Added the `ASFLOAT` function keyword.
